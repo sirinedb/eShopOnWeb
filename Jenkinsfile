@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'dotnet build eShopOnWeb.sln'
+        sh 'DotNet build eShopOnWeb.sln'
       }
     }
 
@@ -11,19 +11,19 @@ pipeline {
       parallel {
         stage('Tests') {
           steps {
-            sh 'dotnet test tests/UnitTests'
+            sh 'DotNet test tests/UnitTests'
           }
         }
 
         stage('Integration') {
           steps {
-            sh 'dotnet test tests/IntegrationTests'
+            sh 'DotNet test tests/IntegrationTests'
           }
         }
 
         stage('Functional') {
           steps {
-            sh 'dotnet test tests/FunctionalTests'
+            sh 'DotNet  test tests/FunctionalTests'
           }
         }
 
@@ -32,7 +32,7 @@ pipeline {
 
     stage('Deployement') {
       steps {
-        sh 'dotnet publish eShopOnWeb.sln -o/var/aspnet'
+        sh 'DotNet  publish eShopOnWeb.sln -o/var/aspnet'
       }
     }
 
