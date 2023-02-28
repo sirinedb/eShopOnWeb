@@ -36,7 +36,7 @@ pipeline {
     stage('Deployement') {
       steps {
         sh 'dotnet Publish eShopOnWeb.sln -o /var/aspnet'
-        dir(path: '/var/aspnet') {
+        dir(path: '/var/asp-net') {
           archiveArtifacts(artifacts: '*', onlyIfSuccessful: true)
         }
 
