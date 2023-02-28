@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('Tests') {
           steps {
-            sh 'dotnet test tests/UnitTests'
+            sh 'dotnet tests/UnitTests'
           }
         }
 
