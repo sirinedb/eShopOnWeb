@@ -23,7 +23,7 @@ pipeline {
 
         stage('Functional') {
           steps {
-            sh 'DotNet  test tests/FunctionalTests'
+            sh 'DotNet test tests/FunctionalTests'
           }
         }
 
