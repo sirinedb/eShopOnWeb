@@ -17,13 +17,13 @@ pipeline {
 
         stage('Integration') {
           steps {
-            sh 'dotnet  test tests/IntegrationTests'
+            sh 'dotnet test tests/IntegrationTests'
           }
         }
 
         stage('Functional') {
           steps {
-            sh 'dotnet  test tests/FunctionalTests'
+            sh 'dotnet test tests/FunctionalTests'
           }
         }
 
